@@ -1,0 +1,3382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Shreyas Mavale - Cloud, DevOps, Data Science, AI and Technical Trainer">
+
+    <meta name="author"
+          content="Shreyas Mavale">
+
+    <title>
+        Shreyas Mavale | Cloud • DevOps • AI • Data Science
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(94,231,255,0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(139,124,255,0.10),
+                    transparent 30%
+                ),
+                #070a10;
+
+            color: #f5f7fb;
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        :root {
+
+            --primary: #5ee7ff;
+
+            --secondary: #8b7cff;
+
+            --background: #070a10;
+
+            --card: rgba(14,19,29,0.75);
+
+            --border: rgba(255,255,255,0.09);
+
+            --text: #f5f7fb;
+
+            --muted: #8d98a8;
+
+            --success: #69f0ae;
+
+            --max-width: 1200px;
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ====================================================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #070a10;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #293342;
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(7,10,16,0.78);
+
+            backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .nav-container {
+
+            max-width:
+                var(--max-width);
+
+            margin: auto;
+
+            padding:
+                18px 30px;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+        }
+
+
+        .logo {
+
+            font-size: 22px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+            color: var(--primary);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            font-size: 13px;
+
+            color: #aeb7c4;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+
+        .menu-btn {
+
+            display: none;
+
+            border: none;
+
+            background: none;
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            padding:
+                140px 30px 90px;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .hero-container {
+
+            max-width:
+                var(--max-width);
+
+            width: 100%;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.25fr
+                0.75fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .hero-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                8px 14px;
+
+            border:
+                1px solid
+                rgba(94,231,255,0.25);
+
+            border-radius: 50px;
+
+            background:
+                rgba(94,231,255,0.05);
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .status-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                var(--success);
+
+            box-shadow:
+                0 0 10px
+                rgba(105,240,174,0.8);
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(48px,7vw,82px);
+
+            line-height: 0.98;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .gradient-text {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color: transparent;
+        }
+
+
+        .hero-description {
+
+            max-width: 690px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 13px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                13px 20px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-primary {
+
+            background:
+                var(--primary);
+
+            color:
+                #071018;
+        }
+
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(94,231,255,0.2);
+        }
+
+
+        .btn-outline {
+
+            border:
+                1px solid #303846;
+
+            color:
+                #dbe1e8;
+        }
+
+
+        .btn-outline:hover {
+
+            border-color:
+                var(--primary);
+
+            color:
+                var(--primary);
+        }
+
+
+        /* =====================================================
+           PROFILE PHOTO
+        ====================================================== */
+
+        .profile-wrapper {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .profile-frame {
+
+            width: 340px;
+
+            height: 400px;
+
+            border-radius: 25px;
+
+            padding: 6px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.45);
+        }
+
+
+        .profile-frame img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            background: #10151f;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
+
+        section {
+            padding: 110px 30px;
+        }
+
+
+        .container {
+
+            max-width:
+                var(--max-width);
+
+            margin: auto;
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-label {
+
+            color:
+                var(--primary);
+
+            font-family:
+                "JetBrains Mono",
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 42px;
+
+            letter-spacing: -2px;
+
+            margin-top: 8px;
+        }
+
+
+        .section-heading p {
+
+            color:
+                var(--muted);
+
+            max-width: 700px;
+
+            margin-top: 12px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ====================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 50px;
+        }
+
+
+        .about-text {
+
+            color:
+                #aeb7c4;
+
+            font-size: 15px;
+        }
+
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .stat-card {
+
+            padding: 25px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            transition: 0.3s;
+        }
+
+
+        .stat-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(94,231,255,0.3);
+        }
+
+
+        .stat-card h3 {
+
+            color:
+                var(--primary);
+
+            font-size: 31px;
+        }
+
+
+        .stat-card p {
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ====================================================== */
+
+        .timeline {
+
+            border-left:
+                1px solid #2a3340;
+
+            padding-left: 35px;
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            margin-bottom: 55px;
+        }
+
+
+        .timeline-item::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 11px;
+
+            height: 11px;
+
+            border-radius: 50%;
+
+            background:
+                var(--primary);
+
+            left: -41px;
+
+            top: 6px;
+
+            box-shadow:
+                0 0 15px
+                rgba(94,231,255,0.7);
+        }
+
+
+        .timeline-date {
+
+            color:
+                var(--primary);
+
+            font-family:
+                "JetBrains Mono",
+                monospace;
+
+            font-size: 12px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .timeline-item h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .timeline-item h4 {
+
+            color:
+                #7f8a9a;
+
+            font-weight: 500;
+
+            margin-bottom: 20px;
+        }
+
+
+        .timeline-item ul {
+
+            padding-left: 18px;
+
+            color:
+                #aeb7c4;
+        }
+
+
+        .timeline-item li {
+
+            list-style: disc;
+
+            margin-bottom: 9px;
+        }
+
+
+        /* =====================================================
+           TRAINING SECTION
+        ====================================================== */
+
+        .training-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+        }
+
+
+        .training-card {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+
+        .training-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(94,231,255,0.35);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.25);
+        }
+
+
+        .training-header {
+
+            padding: 28px;
+
+            border-bottom:
+                1px solid
+                var(--border);
+        }
+
+
+        .training-number {
+
+            color:
+                var(--primary);
+
+            font-family:
+                "JetBrains Mono",
+                monospace;
+
+            font-size: 11px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .training-header h3 {
+
+            font-size: 23px;
+
+            line-height: 1.3;
+
+            margin-bottom: 8px;
+        }
+
+
+        .training-location {
+
+            color:
+                var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        .training-body {
+
+            padding: 25px;
+        }
+
+
+        .training-body p {
+
+            color:
+                #9ca7b5;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .training-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .training-tag {
+
+            padding:
+                6px 10px;
+
+            background:
+                #151c27;
+
+            border-radius: 5px;
+
+            color:
+                #aeb9c7;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           GALLERY
+        ====================================================== */
+
+        .gallery-title {
+
+            font-size: 14px;
+
+            color:
+                #dce3eb;
+
+            margin-bottom: 13px;
+        }
+
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 8px;
+        }
+
+
+        .gallery-item {
+
+            height: 120px;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+            background:
+                #111722;
+
+            border:
+                1px solid
+                #242d39;
+        }
+
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.4s;
+        }
+
+
+        .gallery-item:hover img {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ====================================================== */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+        }
+
+
+        .skill-card {
+
+            padding: 25px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            transition: 0.3s;
+        }
+
+
+        .skill-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(94,231,255,0.3);
+        }
+
+
+        .skill-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(94,231,255,0.07);
+
+            color:
+                var(--primary);
+
+            margin-bottom: 17px;
+        }
+
+
+        .skill-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .skill-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+
+        .skill-tag {
+
+            padding:
+                6px 9px;
+
+            background:
+                #151c27;
+
+            border-radius: 5px;
+
+            color:
+                #aeb9c7;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ====================================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 22px;
+        }
+
+
+        .project-card {
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(15,21,32,0.9),
+                    rgba(10,14,22,0.8)
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .project-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(94,231,255,0.3);
+        }
+
+
+        .project-number {
+
+            color:
+                var(--primary);
+
+            font-family:
+                "JetBrains Mono",
+                monospace;
+
+            font-size: 11px;
+
+            margin-bottom: 13px;
+        }
+
+
+        .project-card h3 {
+
+            font-size: 23px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .project-subtitle {
+
+            color:
+                #697586;
+
+            font-size: 12px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .project-card p {
+
+            color:
+                #8f9aaa;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .project-list {
+
+            padding-left: 18px;
+
+            color:
+                #aeb7c4;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .project-list li {
+
+            list-style: disc;
+
+            margin-bottom: 7px;
+        }
+
+
+        .project-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+
+        .project-tag {
+
+            padding:
+                6px 9px;
+
+            border:
+                1px solid #26303d;
+
+            border-radius: 5px;
+
+            color:
+                #9eabba;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ====================================================== */
+
+        .education-grid {
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .education-card {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            padding: 25px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+
+        .education-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .education-card p {
+
+            color:
+                var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        .education-year {
+
+            color:
+                var(--primary);
+
+            font-family:
+                "JetBrains Mono",
+                monospace;
+
+            font-size: 11px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           LANGUAGES & INTERESTS
+        ====================================================== */
+
+        .profile-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        .profile-card {
+
+            padding: 28px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 13px;
+        }
+
+
+        .profile-card h3 {
+
+            margin-bottom: 18px;
+
+            font-size: 18px;
+        }
+
+
+        .pill-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .pill {
+
+            padding:
+                8px 12px;
+
+            background:
+                #151c27;
+
+            border-radius: 50px;
+
+            color:
+                #aeb8c5;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        .contact {
+
+            text-align: center;
+
+            padding-bottom: 80px;
+        }
+
+
+        .contact-box {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 50px 30px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(94,231,255,0.04),
+                    rgba(139,124,255,0.04)
+                );
+        }
+
+
+        .contact-box h2 {
+
+            font-size: 42px;
+
+            letter-spacing: -2px;
+
+            margin:
+                10px 0 12px;
+        }
+
+
+        .contact-box p {
+
+            color:
+                var(--muted);
+
+            margin-bottom: 30px;
+        }
+
+
+        .contact-links {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .contact-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                11px 15px;
+
+            border:
+                1px solid #293341;
+
+            border-radius: 8px;
+
+            color:
+                #aeb8c5;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-link:hover {
+
+            color:
+                var(--primary);
+
+            border-color:
+                var(--primary);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            border-top:
+                1px solid var(--border);
+
+            padding:
+                25px 30px;
+
+            text-align: center;
+
+            color:
+                #596475;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           LIGHTBOX
+        ====================================================== */
+
+        .lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.92);
+
+            z-index: 2000;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        .lightbox.active {
+            display: flex;
+        }
+
+
+        .lightbox img {
+
+            max-width: 90vw;
+
+            max-height: 85vh;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,0.7);
+        }
+
+
+        .lightbox-close {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 30px;
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: 1px solid #394351;
+
+            background:
+                rgba(20,25,34,0.9);
+
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           ANIMATION
+        ====================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media(max-width: 950px) {
+
+            .hero-container {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .profile-wrapper {
+
+                justify-content:
+                    flex-start;
+            }
+
+
+            .skills-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width: 750px) {
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+                width: 100%;
+
+                padding: 20px;
+
+                flex-direction: column;
+
+                background:
+                    #080c13;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .nav-links.show {
+                display: flex;
+            }
+
+
+            .menu-btn {
+                display: block;
+            }
+
+
+            .hero {
+
+                padding:
+                    120px 20px 70px;
+            }
+
+
+            section {
+                padding:
+                    75px 20px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    52px;
+
+                letter-spacing:
+                    -3px;
+            }
+
+
+            .about-grid,
+            .training-grid,
+            .projects-grid,
+            .profile-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .skills-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .profile-frame {
+
+                width: 280px;
+
+                height: 330px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 34px;
+            }
+
+
+            .education-card {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+                gap: 10px;
+            }
+
+
+            .contact-box h2 {
+
+                font-size: 34px;
+            }
+
+        }
+
+
+        @media(max-width: 450px) {
+
+            .stats {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    44px;
+            }
+
+
+            .profile-frame {
+
+                width: 240px;
+
+                height: 290px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#"
+           class="logo">
+
+            Shreyas<span>.</span>
+
+        </a>
+
+
+        <button class="menu-btn"
+                id="menuBtn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <ul class="nav-links"
+            id="navLinks">
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#experience">
+                    Experience
+                </a>
+            </li>
+
+            <li>
+                <a href="#training">
+                    Training
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#education">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content reveal">
+
+            <div class="hero-label">
+
+                <span class="status-dot"></span>
+
+                CLOUD • DEVOPS • DATA SCIENCE • AI
+
+            </div>
+
+
+            <h1>
+
+                Hi, I'm
+
+                <span class="gradient-text">
+                    Shreyas.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Teaching Associate, Cloud & DevOps
+                professional and Data Science enthusiast
+                focused on building practical technology
+                solutions and delivering industry-oriented
+                technical training.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#projects"
+                   class="btn btn-primary">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    View Projects
+
+                </a>
+
+
+                <a href="#training"
+                   class="btn btn-outline">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                    Training Experience
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROFILE PHOTO
+        ================================================== -->
+
+        <div class="profile-wrapper reveal">
+
+            <div class="profile-frame">
+
+                <!--
+                    CHANGE THIS FILE NAME IF REQUIRED
+
+                    Place your profile image inside:
+
+                    images/profile.jpg
+                -->
+
+                <img src="images/profile.jpg"
+                     alt="Shreyas Mavale">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                01 — About
+            </span>
+
+            <h2>
+                Technology, Teaching & Innovation
+            </h2>
+
+            <p>
+                Combining cloud infrastructure,
+                DevOps, Data Science, AI and technical
+                education.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
+
+                <p>
+
+                    I am a technology professional and
+                    Teaching Associate with experience
+                    across Cloud Computing, DevOps,
+                    Data Science, Artificial Intelligence
+                    and Machine Learning.
+
+                </p>
+
+
+                <p>
+
+                    My professional work includes designing
+                    AWS infrastructure, containerized
+                    applications, Kubernetes deployments,
+                    Infrastructure as Code and secure
+                    cloud environments.
+
+                </p>
+
+
+                <p>
+
+                    Alongside my academic role, I have also
+                    delivered technical training through
+                    freelance engagements, giving students
+                    hands-on exposure to modern technology
+                    concepts.
+
+                </p>
+
+
+                <p>
+
+                    I am particularly interested in building
+                    practical systems where software,
+                    infrastructure and intelligent
+                    data-driven solutions come together.
+
+                </p>
+
+            </div>
+
+
+            <div class="stats reveal">
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        80+
+                    </h3>
+
+                    <p>
+                        Students trained
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        40%
+                    </h3>
+
+                    <p>
+                        Lab deployment improvement
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        60%
+                    </h3>
+
+                    <p>
+                        Deployment reliability improvement
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        99.9%
+                    </h3>
+
+                    <p>
+                        Kubernetes uptime during testing
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+====================================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                02 — Experience
+            </span>
+
+            <h2>
+                Professional Experience
+            </h2>
+
+        </div>
+
+
+        <div class="timeline reveal">
+
+
+            <!-- CURRENT ROLE -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+
+                    SEPT 2025 — PRESENT
+
+                </div>
+
+
+                <h3>
+                    Teaching Associate
+                </h3>
+
+
+                <h4>
+                    D Y Patil International University · Pune
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Delivered Cloud Computing and DevOps
+                        training to 80+ undergraduate students.
+                    </li>
+
+                    <li>
+                        Designed secure AWS architectures
+                        using EC2, S3, IAM and VPC.
+                    </li>
+
+                    <li>
+                        Improved lab deployment success rate
+                        through structured hands-on cloud labs.
+                    </li>
+
+                    <li>
+                        Conducted practical sessions on
+                        Docker, Linux server hardening,
+                        SSH and CI/CD workflows.
+                    </li>
+
+                    <li>
+                        Teaching Cloud Networks & Security,
+                        Artificial Neural Networks and
+                        Advanced Big Data Analytics.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FREELANCE TRAINING -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+
+                    FREELANCE TECHNICAL TRAINING
+
+                </div>
+
+
+                <h3>
+                    Freelance Technical Trainer
+                </h3>
+
+
+                <h4>
+                    Academic & Technical Training Engagements
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Delivered technical training programs
+                        as a freelance trainer.
+                    </li>
+
+                    <li>
+                        Conducted practical and hands-on
+                        sessions for undergraduate students.
+                    </li>
+
+                    <li>
+                        Delivered training engagements across
+                        multiple academic institutions.
+                    </li>
+
+                    <li>
+                        Focused on practical technology concepts,
+                        demonstrations and student interaction.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAINING & WORKSHOPS
+====================================================== -->
+
+<section id="training">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                03 — Training
+            </span>
+
+            <h2>
+                Training & Workshops
+            </h2>
+
+            <p>
+                Technical training delivered through
+                freelance academic engagements.
+            </p>
+
+        </div>
+
+
+        <div class="training-grid">
+
+
+            <!-- =================================================
+                 JSPM
+            ================================================== -->
+
+            <article class="training-card reveal">
+
+
+                <div class="training-header">
+
+                    <div class="training-number">
+                        TRAINING / 01
+                    </div>
+
+
+                    <h3>
+                        JSPM's Rajarshi Shahu
+                        College of Engineering
+                    </h3>
+
+
+                    <div class="training-location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Tathawade, Pune, Maharashtra
+
+                    </div>
+
+                </div>
+
+
+                <div class="training-body">
+
+
+                    <p>
+
+                        Freelance technical training engagement
+                        conducted for students at JSPM's Rajarshi
+                        Shahu College of Engineering, Tathawade.
+
+                    </p>
+
+
+                    <div class="training-tags">
+
+                        <span class="training-tag">
+                            Technical Training
+                        </span>
+
+                        <span class="training-tag">
+                            Hands-on Learning
+                        </span>
+
+                        <span class="training-tag">
+                            Student Workshop
+                        </span>
+
+                    </div>
+
+
+                    <!-- IMAGE GALLERY -->
+
+                    <div class="gallery-title">
+
+                        Training Photos
+
+                    </div>
+
+
+                    <div class="gallery">
+
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="images/jspm/training-1.jpg"
+                                alt="JSPM training session"
+                                onclick="openLightbox(this.src)"
+                            >
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="images/jspm/training-2.jpg"
+                                alt="JSPM training session"
+                                onclick="openLightbox(this.src)"
+                            >
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="images/jspm/training-3.jpg"
+                                alt="JSPM training session"
+                                onclick="openLightbox(this.src)"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PCU
+            ================================================== -->
+
+            <article class="training-card reveal">
+
+
+                <div class="training-header">
+
+                    <div class="training-number">
+                        TRAINING / 02
+                    </div>
+
+
+                    <h3>
+                        Pimpri Chinchwad University
+                    </h3>
+
+
+                    <div class="training-location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Mohitewadi, Maharashtra
+
+                    </div>
+
+                </div>
+
+
+                <div class="training-body">
+
+
+                    <p>
+
+                        Freelance technical training engagement
+                        conducted for students at Pimpri Chinchwad
+                        University.
+
+                    </p>
+
+
+                    <div class="training-tags">
+
+                        <span class="training-tag">
+                            Technical Training
+                        </span>
+
+                        <span class="training-tag">
+                            Hands-on Learning
+                        </span>
+
+                        <span class="training-tag">
+                            Student Workshop
+                        </span>
+
+                    </div>
+
+
+                    <!-- IMAGE GALLERY -->
+
+                    <div class="gallery-title">
+
+                        Training Photos
+
+                    </div>
+
+
+                    <div class="gallery">
+
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="images/pcu/training-1.jpg"
+                                alt="PCU training session"
+                                onclick="openLightbox(this.src)"
+                            >
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="images/pcu/training-2.jpg"
+                                alt="PCU training session"
+                                onclick="openLightbox(this.src)"
+                            >
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="images/pcu/training-3.jpg"
+                                alt="PCU training session"
+                                onclick="openLightbox(this.src)"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+====================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                04 — Skills
+            </span>
+
+            <h2>
+                Technical Stack
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+
+                <h3>
+                    Cloud Computing
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">EC2</span>
+                    <span class="skill-tag">S3</span>
+                    <span class="skill-tag">IAM</span>
+                    <span class="skill-tag">VPC</span>
+                    <span class="skill-tag">CloudWatch</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <h3>
+                    DevOps
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Docker Compose</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Linux</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <h3>
+                    Infrastructure
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Nginx</span>
+                    <span class="skill-tag">Security Groups</span>
+                    <span class="skill-tag">Networking</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3>
+                    Data Science
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Data Visualization</span>
+                    <span class="skill-tag">Machine Learning</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <h3>
+                    AI & ML
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">ANN</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">NLTK</span>
+                    <span class="skill-tag">Random Forest</span>
+                    <span class="skill-tag">SVM</span>
+                    <span class="skill-tag">XGBoost</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>
+                    Development
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">Android</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+====================================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                05 — Projects
+            </span>
+
+            <h2>
+                Featured Projects
+            </h2>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT / 01
+                </div>
+
+                <h3>
+                    Cloud-Based WordPress Deployment
+                </h3>
+
+                <div class="project-subtitle">
+                    AWS EC2 + Docker + Networking
+                </div>
+
+                <p>
+                    Containerized WordPress and MariaDB
+                    deployment on AWS EC2.
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        Designed 2-tier containerized application.
+                    </li>
+
+                    <li>
+                        Implemented Docker bridge networking.
+                    </li>
+
+                    <li>
+                        Configured persistent storage.
+                    </li>
+
+                    <li>
+                        Automated deployment with EC2 User Data.
+                    </li>
+
+                    <li>
+                        Configured AWS Security Groups.
+                    </li>
+
+                </ul>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">EC2</span>
+                    <span class="project-tag">Docker</span>
+                    <span class="project-tag">MariaDB</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT / 02
+                </div>
+
+                <h3>
+                    Kubernetes with Terraform
+                </h3>
+
+                <div class="project-subtitle">
+                    Kubernetes + Terraform + Docker
+                </div>
+
+                <p>
+                    Infrastructure-as-Code based Kubernetes
+                    deployment.
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        Provisioned infrastructure using Terraform.
+                    </li>
+
+                    <li>
+                        Deployed Dockerized applications.
+                    </li>
+
+                    <li>
+                        Implemented Deployments and ReplicaSets.
+                    </li>
+
+                    <li>
+                        Configured rolling updates.
+                    </li>
+
+                    <li>
+                        Integrated PV/PVC.
+                    </li>
+
+                </ul>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">Kubernetes</span>
+                    <span class="project-tag">Terraform</span>
+                    <span class="project-tag">Docker</span>
+                    <span class="project-tag">IaC</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT / 03
+                </div>
+
+                <h3>
+                    Vehicle Health Monitoring System
+                </h3>
+
+                <div class="project-subtitle">
+                    Android + Machine Learning
+                </div>
+
+                <p>
+                    Android-based vehicle monitoring and
+                    predictive maintenance system.
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        Analyzed vehicle sensor parameters.
+                    </li>
+
+                    <li>
+                        Detected anomalies and potential failures.
+                    </li>
+
+                    <li>
+                        Implemented machine learning prediction.
+                    </li>
+
+                    <li>
+                        Created data visualization.
+                    </li>
+
+                    <li>
+                        Added maintenance alerts.
+                    </li>
+
+                </ul>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">Android</span>
+                    <span class="project-tag">Java</span>
+                    <span class="project-tag">ML</span>
+                    <span class="project-tag">Firebase</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT / 04
+                </div>
+
+                <h3>
+                    Customer Churn Prediction
+                </h3>
+
+                <div class="project-subtitle">
+                    Data Analytics + Machine Learning
+                </div>
+
+                <p>
+                    Data analytics project for identifying
+                    customer churn and retention risk.
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        Performed exploratory data analysis.
+                    </li>
+
+                    <li>
+                        Analyzed subscription trends.
+                    </li>
+
+                    <li>
+                        Created visualizations.
+                    </li>
+
+                    <li>
+                        Built churn prediction model.
+                    </li>
+
+                </ul>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">EDA</span>
+                    <span class="project-tag">ML</span>
+                    <span class="project-tag">Analytics</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 5 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT / 05
+                </div>
+
+                <h3>
+                    Movie Review Sentiment Analysis
+                </h3>
+
+                <div class="project-subtitle">
+                    NLP + Machine Learning
+                </div>
+
+                <p>
+                    NLP system for classifying movie reviews
+                    as positive or negative.
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        Processed textual review data.
+                    </li>
+
+                    <li>
+                        Applied NLP techniques.
+                    </li>
+
+                    <li>
+                        Performed sentiment classification.
+                    </li>
+
+                </ul>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">NLP</span>
+                    <span class="project-tag">NLTK</span>
+                    <span class="project-tag">ML</span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+====================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                06 — Education
+            </span>
+
+            <h2>
+                Academic Background
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card reveal">
+
+                <div>
+
+                    <h3>
+                        Master of Science in Data Science
+                    </h3>
+
+                    <p>
+                        Woolf University · Malta, Europe
+                    </p>
+
+                </div>
+
+                <span class="education-year">
+                    2024 — PRESENT
+                </span>
+
+            </div>
+
+
+            <div class="education-card reveal">
+
+                <div>
+
+                    <h3>
+                        Bachelor of Technology in Data Science
+                    </h3>
+
+                    <p>
+                        D Y Patil International University · Pune
+                    </p>
+
+                </div>
+
+                <span class="education-year">
+                    2020 — 2024
+                </span>
+
+            </div>
+
+
+            <div class="education-card reveal">
+
+                <div>
+
+                    <h3>
+                        Diploma in Electrical Engineering
+                    </h3>
+
+                    <p>
+                        J T Mahajan Polytechnic · Faizpur
+                    </p>
+
+                </div>
+
+                <span class="education-year">
+                    2017 — 2020
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LANGUAGES & INTERESTS
+====================================================== -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                07 — Beyond Technology
+            </span>
+
+            <h2>
+                Languages & Interests
+            </h2>
+
+        </div>
+
+
+        <div class="profile-grid">
+
+
+            <div class="profile-card reveal">
+
+                <h3>
+                    <i class="fa-solid fa-language"></i>
+                    Languages
+                </h3>
+
+
+                <div class="pill-container">
+
+                    <span class="pill">
+                        English
+                    </span>
+
+                    <span class="pill">
+                        Hindi
+                    </span>
+
+                    <span class="pill">
+                        Marathi
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card reveal">
+
+                <h3>
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Interests
+                </h3>
+
+
+                <div class="pill-container">
+
+                    <span class="pill">
+                        Artificial Intelligence
+                    </span>
+
+                    <span class="pill">
+                        Machine Learning
+                    </span>
+
+                    <span class="pill">
+                        Blockchain
+                    </span>
+
+                    <span class="pill">
+                        Space Exploration
+                    </span>
+
+                    <span class="pill">
+                        New Technologies
+                    </span>
+
+                    <span class="pill">
+                        Traveling
+                    </span>
+
+                    <span class="pill">
+                        Cooking
+                    </span>
+
+                    <span class="pill">
+                        Music
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section id="contact"
+         class="contact">
+
+    <div class="container">
+
+
+        <div class="contact-box reveal">
+
+            <span class="section-label">
+                08 — Contact
+            </span>
+
+
+            <h2>
+
+                Let's Build Something
+
+                <span class="gradient-text">
+                    Great.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Interested in Cloud, DevOps,
+                Data Science, AI or technical training?
+
+                Let's connect.
+
+            </p>
+
+
+            <div class="contact-links">
+
+
+                <a class="contact-link"
+                   href="mailto:Mavaleshrryas12@gmail.com">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    Email
+
+                </a>
+
+
+                <a class="contact-link"
+                   href="tel:+917028420758">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Phone
+
+                </a>
+
+
+                <a class="contact-link"
+                   href="https://linkedin.com/in/Shreyas-Mavale"
+                   target="_blank"
+                   rel="noopener">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                    LinkedIn
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    © 2026 Shreyas Mavale · Cloud • DevOps • Data Science • AI
+
+</footer>
+
+
+
+<!-- =====================================================
+     IMAGE LIGHTBOX
+====================================================== -->
+
+<div class="lightbox"
+     id="lightbox">
+
+    <button class="lightbox-close"
+            onclick="closeLightbox()">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <img id="lightboxImage"
+         src=""
+         alt="Training photograph">
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            navLinks.classList.toggle("show");
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.remove("show");
+
+                }
+            );
+
+        });
+
+
+
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target
+                            .classList
+                            .add("active");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+    /* =================================================
+       LIGHTBOX
+    ================================================= */
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+
+    function openLightbox(imageSource) {
+
+        lightboxImage.src =
+            imageSource;
+
+        lightbox.classList.add(
+            "active"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+    }
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+        document.body.style.overflow =
+            "auto";
+    }
+
+
+    lightbox.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                lightbox
+            ) {
+
+                closeLightbox();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeLightbox();
+
+            }
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
